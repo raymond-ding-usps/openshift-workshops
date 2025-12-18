@@ -44,7 +44,8 @@
         <client_script_v2><![CDATA[function onClick() {
     // Navigate to create a new After Action Report with the current Problem as related record
     var problemSysId = g_form.getUniqueValue();
-    var url = 'sn_problem_after_action_report.do?sys_id=-1&sysparm_query=problem=' + problemSysId;
+    // Use sysparm_problem to properly pre-populate the Problem reference field
+    var url = 'sn_problem_after_action_report.do?sys_id=-1&sysparm_problem=' + problemSysId;
     window.open(url, '_blank');
 }]]></client_script_v2>
         <comments>UI Action to add New button for After Action Reports related to Problem records. This addresses the missing New button issue in Zurich that was present in Xanadu.</comments>
@@ -65,12 +66,7 @@
         <list_style></list_style>
         <name>New After Action Report</name>
         <order>100</order>
-        <script><![CDATA[// Server-side script (if needed)
-// This runs on the server before the client script
-// Return true to show the button, false to hide it
-(function() {
-    return true; // Always show the button on Problem forms
-})();]]></script>
+        <script></script>
         <show_insert>false</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
