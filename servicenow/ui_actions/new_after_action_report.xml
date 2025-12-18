@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <action_name>new_after_action_report</action_name>
+        <client>true</client>
+        <client_script_v2><![CDATA[function onClick() {
+    // Navigate to create a new After Action Report with the current Problem as related record
+    var problemSysId = g_form.getUniqueValue();
+    // Use sysparm_problem to properly pre-populate the Problem reference field
+    var url = 'sn_problem_after_action_report.do?sys_id=-1&sysparm_problem=' + problemSysId;
+    window.open(url, '_blank');
+}]]></client_script_v2>
+        <comments>UI Action to add New button for After Action Reports related to Problem records. This addresses the missing New button issue in Zurich that was present in Xanadu.</comments>
+        <condition></condition>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_v2>true</form_button_v2>
+        <form_link>false</form_link>
+        <form_menu_button>false</form_menu_button>
+        <form_style>primary</form_style>
+        <hint>Create a new After Action Report for this Problem</hint>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_link>false</list_link>
+        <list_menu_button>false</list_menu_button>
+        <list_style></list_style>
+        <name>New After Action Report</name>
+        <order>100</order>
+        <script></script>
+        <show_insert>false</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <table>problem</table>
+        <ui_action_type>button</ui_action_type>
+    </sys_ui_action>
+</record_update>
