@@ -56,7 +56,8 @@ function onClick() {
     var problemSysId = g_form.getUniqueValue();
     
     // Build URL to create new After Action Report with Problem pre-filled
-    var url = 'sn_problem_after_action_report.do?sys_id=-1&sysparm_query=problem=' + problemSysId;
+    // Uses standard ServiceNow parameter pattern: sysparm_<field_name>
+    var url = 'sn_problem_after_action_report.do?sys_id=-1&sysparm_problem=' + problemSysId;
     
     // Open in new window
     window.open(url, '_blank');

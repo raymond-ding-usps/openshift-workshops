@@ -123,8 +123,8 @@ function onClick() {
     // 1. Get current Problem's unique ID
     var problemSysId = g_form.getUniqueValue();
     
-    // 2. Build URL with Problem pre-filled
-    var url = 'sn_problem_after_action_report.do?sys_id=-1&sysparm_query=problem=' + problemSysId;
+    // 2. Build URL with Problem pre-filled using standard ServiceNow parameter
+    var url = 'sn_problem_after_action_report.do?sys_id=-1&sysparm_problem=' + problemSysId;
     
     // 3. Open new form in new window
     window.open(url, '_blank');
