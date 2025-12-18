@@ -1,0 +1,72 @@
+{
+  "description": "Related List Layout Configuration for Custom Table on Problem",
+  "instructions": [
+    "Use this configuration when manually setting up the related list",
+    "Navigate to: Problem record > Related List > Configure > List Layout",
+    "Apply the settings below"
+  ],
+  "configuration": {
+    "table": "u_custom_table",
+    "parent_table": "problem",
+    "related_field": "u_problem",
+    "title": "Custom Table Records",
+    "buttons": {
+      "new": true,
+      "edit": true,
+      "delete": false,
+      "import": false,
+      "export": false
+    },
+    "columns": [
+      {
+        "field": "number",
+        "order": 1,
+        "width": 100
+      },
+      {
+        "field": "short_description",
+        "order": 2,
+        "width": 300
+      },
+      {
+        "field": "state",
+        "order": 3,
+        "width": 100
+      },
+      {
+        "field": "priority",
+        "order": 4,
+        "width": 80
+      },
+      {
+        "field": "assigned_to",
+        "order": 5,
+        "width": 150
+      },
+      {
+        "field": "sys_created_on",
+        "order": 6,
+        "width": 150
+      }
+    ],
+    "filter": {
+      "enabled": true,
+      "default_filter": ""
+    },
+    "sorting": {
+      "field": "sys_created_on",
+      "direction": "desc"
+    },
+    "security": {
+      "create_roles": ["itil", "problem_manager"],
+      "edit_roles": ["itil", "problem_manager"],
+      "delete_roles": ["admin"]
+    }
+  },
+  "notes": [
+    "Replace 'u_custom_table' with your actual custom table name",
+    "Replace 'u_problem' with your actual reference field name",
+    "Adjust columns based on your custom table schema",
+    "Update roles based on your organization's role structure"
+  ]
+}

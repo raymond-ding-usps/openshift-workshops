@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Related List Configuration for Custom Table on Problem Table
+    
+    Purpose: Configures the related list display for custom table on Problem records
+    Parent Table: problem
+    Related Table: u_custom_table (replace with your custom table name)
+    
+    Instructions:
+    1. Replace 'u_custom_table' with your actual custom table name
+    2. Replace 'u_problem' with the actual reference field name
+    3. Import via System Definition > Related Lists
+    4. Verify the "New" button appears after import
+-->
+<sys_ui_related_list action="INSERT_OR_UPDATE">
+    <active>true</active>
+    <name>u_custom_table</name>
+    <parent>problem</parent>
+    <relationship>u_problem</relationship>
+    <related_field>u_problem</related_field>
+    <view_name>Default view</view_name>
+    <list_id>u_custom_table_problem_list</list_id>
+    
+    <!-- Button Configuration -->
+    <new_button>true</new_button>
+    <edit_button>true</edit_button>
+    <delete_button>false</delete_button>
+    
+    <!-- Display Configuration -->
+    <order>100</order>
+    <title>Custom Table Records</title>
+    
+    <!-- Security -->
+    <create_roles>itil,problem_manager</create_roles>
+    <edit_roles>itil,problem_manager</edit_roles>
+    
+    <!-- Additional Settings -->
+    <omit_new_button>false</omit_new_button>
+    <enable_filter>true</enable_filter>
+    <enable_search>true</enable_search>
+</sys_ui_related_list>
