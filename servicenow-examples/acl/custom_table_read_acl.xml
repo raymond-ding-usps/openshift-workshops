@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    ACL Configuration for Custom Table Read Permission
+    
+    Purpose: Grants read permission on custom table to appropriate roles
+    Table: u_custom_table (replace with your custom table name)
+    Operation: read
+    
+    Instructions:
+    1. Replace 'u_custom_table' with your actual custom table name
+    2. Adjust roles to match your organization's structure
+    3. Import via System Security > Access Control (ACL)
+-->
+<sys_security_acl action="INSERT_OR_UPDATE">
+    <active>true</active>
+    <admin_overrides>false</admin_overrides>
+    <advanced>true</advanced>
+    <condition/>
+    <description>Allow reading records in custom table for appropriate roles</description>
+    <name>u_custom_table</name>
+    <operation>read</operation>
+    <script><![CDATA[(function() {
+    // Grant access to users with problem_manager, itil, or problem_admin role
+    // Adjust these roles based on your organization's needs
+    
+    if (gs.hasRole('problem_manager') || 
+        gs.hasRole('itil') || 
+        gs.hasRole('problem_admin') ||
+        gs.hasRole('admin')) {
+        return true;
+    }
+    
+    // Deny access to all other users
+    return false;
+})();]]></script>
+    <type>record</type>
+</sys_security_acl>

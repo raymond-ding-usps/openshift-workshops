@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    ACL Configuration for Custom Table Create Permission
+    
+    Purpose: Grants create permission on custom table to appropriate roles
+    Table: u_custom_table (replace with your custom table name)
+    Operation: create
+    
+    Instructions:
+    1. Replace 'u_custom_table' with your actual custom table name
+    2. Adjust roles in the script to match your organization's structure
+    3. Import via System Security > Access Control (ACL)
+    4. Test with affected user roles
+-->
+<sys_security_acl action="INSERT_OR_UPDATE">
+    <active>true</active>
+    <admin_overrides>false</admin_overrides>
+    <advanced>true</advanced>
+    <condition/>
+    <description>Allow creating records in custom table for problem managers and ITIL users</description>
+    <name>u_custom_table</name>
+    <operation>create</operation>
+    <script><![CDATA[(function() {
+    // Grant access to users with problem_manager or itil role
+    // Adjust these roles based on your organization's needs
+    
+    if (gs.hasRole('problem_manager')) {
+        return true;
+    }
+    
+    if (gs.hasRole('itil')) {
+        return true;
+    }
+    
+    // Grant access to admin users (recommended)
+    if (gs.hasRole('admin')) {
+        return true;
+    }
+    
+    // Deny access to all other users
+    return false;
+})();]]></script>
+    <type>record</type>
+</sys_security_acl>
