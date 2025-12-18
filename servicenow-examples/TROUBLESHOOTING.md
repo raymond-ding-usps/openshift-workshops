@@ -305,7 +305,7 @@ To prevent this issue in future implementations:
 
 ## Additional Resources
 
-- ServiceNow Documentation: Access Control Lists
-- ServiceNow Documentation: Related Lists
-- ServiceNow Community Forums
-- ServiceNow Now Learning (training resources)
+- [ServiceNow Documentation: Access Control Rules](https://docs.servicenow.com/bundle/washingtondc-platform-security/page/administer/security/concept/access-control-rules.html)
+- [ServiceNow Documentation: Related Lists and Related Records](https://docs.servicenow.com/bundle/washingtondc-platform-user-interface/page/administer/form-administration/concept/related-lists.html)
+- [ServiceNow Community Forums](https://www.servicenow.com/community/)
+- [ServiceNow Learning Portal](https://www.servicenow.com/community/now-learning/ct-p/now-learning)

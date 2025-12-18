@@ -27,13 +27,13 @@
         // User has create permission, ensure the New button is visible
         g_form.setRelatedListNewButton(customTableName, true);
         
-        // Optional: Log for debugging (remove in production)
-        gs.info('New button enabled for ' + customTableName + ' related list for user: ' + gs.getUserName());
+        // Optional: Log for debugging (remove in production or use gs.debug())
+        gs.debug('New button enabled for ' + customTableName + ' related list for user: ' + gs.getUserName());
     } else {
         // User does not have create permission, hide the New button
         g_form.setRelatedListNewButton(customTableName, false);
         
-        // Optional: Log for debugging (remove in production)
-        gs.info('New button disabled for ' + customTableName + ' related list for user: ' + gs.getUserName() + ' (no create permission)');
+        // Optional: Log for debugging (remove in production or use gs.debug())
+        gs.debug('New button disabled for ' + customTableName + ' related list for user: ' + gs.getUserName() + ' (no create permission)');
     }
 })();

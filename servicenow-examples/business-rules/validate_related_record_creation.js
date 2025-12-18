@@ -60,9 +60,9 @@
             current.assigned_to = gs.getUserID();
         }
         
-        // Optional: Log for audit trail
-        gs.info('Custom table record created from Problem: ' + current[problemFieldName] + 
-                ' by user: ' + gs.getUserName());
+        // Optional: Log for audit trail (use gs.debug() for less noise, gs.info() for audit)
+        gs.debug('Custom table record created from Problem: ' + current[problemFieldName] + 
+                 ' by user: ' + gs.getUserName());
     }
     
 })(current, previous);

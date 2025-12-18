@@ -212,8 +212,8 @@ If you're an end user experiencing this issue:
 
 ### ServiceNow Resources
 - [ServiceNow Documentation](https://docs.servicenow.com/)
-- [ServiceNow Community](https://community.servicenow.com/)
-- [ServiceNow Learning](https://nowlearning.servicenow.com/)
+- [ServiceNow Community](https://www.servicenow.com/community/)
+- [ServiceNow Learning Portal](https://www.servicenow.com/community/now-learning/ct-p/now-learning)
 
 ### Example Files
 All example files include:
