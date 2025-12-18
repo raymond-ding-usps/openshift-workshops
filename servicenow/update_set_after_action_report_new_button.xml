@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2025-12-18 16:33:00">
+    <sys_remote_update_set action="INSERT_OR_UPDATE">
+        <application display_value="Global">global</application>
+        <application_name>Global</application_name>
+        <application_scope>global</application_scope>
+        <application_version/>
+        <collisions/>
+        <commit_date/>
+        <deleted/>
+        <description>Fix for missing "New" button on After Action Reports related list for Problem records. This button was present in Xanadu but missing in Zurich.</description>
+        <inserted/>
+        <name>After Action Report - New Button Fix</name>
+        <origin_sys_id/>
+        <parent display_value=""/>
+        <release_date/>
+        <remote_base_update_set display_value=""/>
+        <remote_parent_id/>
+        <remote_sys_id>fix_after_action_report_new_button_001</remote_sys_id>
+        <state>loaded</state>
+        <summary/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-12-18 16:33:00</sys_created_on>
+        <sys_id>fix_after_action_report_new_button_001</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-12-18 16:33:00</sys_updated_on>
+        <update_set display_value=""/>
+        <update_source display_value=""/>
+        <updated/>
+    </sys_remote_update_set>
+    <sys_update_xml action="INSERT_OR_UPDATE">
+        <action>INSERT_OR_UPDATE</action>
+        <application display_value="Global">global</application>
+        <category>customer</category>
+        <comments/>
+        <name>sys_ui_action_problem_new_after_action_report</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <action_name>new_after_action_report</action_name>
+        <client>true</client>
+        <client_script_v2><![CDATA[function onClick() {
+    // Navigate to create a new After Action Report with the current Problem as related record
+    var problemSysId = g_form.getUniqueValue();
+    var url = 'sn_problem_after_action_report.do?sys_id=-1&sysparm_query=problem=' + problemSysId;
+    window.open(url, '_blank');
+}]]></client_script_v2>
+        <comments>UI Action to add New button for After Action Reports related to Problem records. This addresses the missing New button issue in Zurich that was present in Xanadu.</comments>
+        <condition></condition>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_v2>true</form_button_v2>
+        <form_link>false</form_link>
+        <form_menu_button>false</form_menu_button>
+        <form_style>primary</form_style>
+        <hint>Create a new After Action Report for this Problem</hint>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_link>false</list_link>
+        <list_menu_button>false</list_menu_button>
+        <list_style></list_style>
+        <name>New After Action Report</name>
+        <order>100</order>
+        <script><![CDATA[// Server-side script (if needed)
+// This runs on the server before the client script
+// Return true to show the button, false to hide it
+(function() {
+    return true; // Always show the button on Problem forms
+})();]]></script>
+        <show_insert>false</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-12-18 16:33:00</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>new_after_action_report_ui_action_001</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New After Action Report</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Global">global</sys_scope>
+        <sys_update_name>sys_ui_action_problem_new_after_action_report</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-12-18 16:33:00</sys_updated_on>
+        <table>problem</table>
+        <ui_action_type>button</ui_action_type>
+    </sys_ui_action>
+</record_update>]]></payload>
+        <payload_hash>-1</payload_hash>
+        <remote_update_set display_value="After Action Report - New Button Fix">fix_after_action_report_new_button_001</remote_update_set>
+        <replace_on_upgrade>false</replace_on_upgrade>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-12-18 16:33:00</sys_created_on>
+        <sys_id>update_new_after_action_report_001</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>2025-12-18 16:33:00</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-12-18 16:33:00</sys_updated_on>
+        <table>sys_ui_action</table>
+        <target_name>New After Action Report</target_name>
+        <type>UI Action</type>
+        <update_domain>global</update_domain>
+        <update_guid>fix_after_action_report_new_button_001</update_guid>
+        <update_guid_history/>
+        <view/>
+    </sys_update_xml>
+</unload>
