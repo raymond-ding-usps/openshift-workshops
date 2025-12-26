@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 /**
  * GlideRecord Field Values Printer
  * 
@@ -9,7 +7,7 @@
  *   var gr = new GlideRecord('incident');
  *   gr.get('INC0010001'); // Get a specific record
  *   
- *   // Then copy and run the code below, or call the function directly
+ *   // Then copy and run the code below
  */
 
 // Print all fields from the current GlideRecord

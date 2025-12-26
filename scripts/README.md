@@ -1,6 +1,6 @@
 # Scripts
 
-This directory contains utility scripts for the OpenShift Workshops project.
+This directory contains utility scripts.
 
 ## print-gliderecord-fields.js
 
